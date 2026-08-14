@@ -23,10 +23,10 @@ public class CondoFeesEntity {
 	@Column(nullable = false)
 	private LocalDate dueDate;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, length = 20)
 	private String status;
 	
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private LocalDate paymentDate;
 
 	public Long getId() {
