@@ -1,4 +1,5 @@
-package com.gestaodecondominios.Controllers;
+package com.gestaodecondominios;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
