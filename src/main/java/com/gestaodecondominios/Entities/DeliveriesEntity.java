@@ -19,13 +19,13 @@ public class DeliveriesEntity {
 	@Column(nullable = true, length = 100)
 	private String trackingCode;
 	
-	@ManyToOne
-	@JoinColumn(name = "unit_id")
-	private Long unitId;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "unit_id", nullable = false)
+	private Unit unit;
 	
-	@ManyToOne
-	@JoinColumn(name = "user_id")
-	private Long receivedById;
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "received_by_id", nullable = false)
+	private User receivedBy;
 	
 	@Column(nullable = false, updatable = false)
 	private LocalDateTime receivedAt;
@@ -33,14 +33,14 @@ public class DeliveriesEntity {
 	@Column(nullable = false, length = 20)
 	private String status;
 	
-	@ManyToOne
-	@JoinColumn(nullable = true, name = "user_id")
-	private Long deliveredById;
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "delivered_by_id")
+    private User deliveredBy;
 	
 	@Column(nullable = true, length = 100)
 	private String recipientName;
 	
-	@Column(nullable = true, updatable = false)
+	@Column(nullable = true)
 	private LocalDateTime deliveredAt;
 	
 	
@@ -69,20 +69,20 @@ public class DeliveriesEntity {
 		this.trackingCode = trackingCode;
 	}
 
-	public Long getUnitId() {
-		return unitId;
+	public Unit getUnit() {
+		return unit;
 	}
 
-	public void setUnitId(Long unitId) {
-		this.unitId = unitId;
+	public void setUnit(Unit unit) {
+		this.unit = unit;
 	}
 
-	public Long getReceivedById() {
-		return receivedById;
+	public User getReceivedBy() {
+		return receivedBy;
 	}
 
-	public void setReceivedById(Long receivedById) {
-		this.receivedById = receivedById;
+	public void setReceivedBy(User receivedBy) {
+		this.receivedBy = receivedBy;
 	}
 
 	public LocalDateTime getReceivedAt() {
@@ -101,12 +101,12 @@ public class DeliveriesEntity {
 		this.status = status;
 	}
 
-	public Long getDeliveredById() {
-		return deliveredById;
+	public User getDeliveredBy() {
+		return deliveredBy;
 	}
 
-	public void setDeliveredById(Long deliveredById) {
-		this.deliveredById = deliveredById;
+	public void setDeliveredBy(User deliveredBy) {
+		this.deliveredBy = deliveredBy;
 	}
 
 	public String getRecipientName() {

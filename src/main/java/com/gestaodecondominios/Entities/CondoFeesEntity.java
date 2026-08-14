@@ -6,16 +6,16 @@ import java.time.LocalDate;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tb_CondoFees")
+@Table(name = "tb_Condo_Fees")
 
 public class CondoFeesEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 	
-	@ManyToOne
-	@JoinColumn(name = "unit_id")
-	private Long unitId;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "unit_id", nullable = false)
+	private Unit unit;
 	
 	@Column(nullable = false)
 	private float amount;
@@ -37,12 +37,12 @@ public class CondoFeesEntity {
 		Id = id;
 	}
 
-	public Long getUnitId() {
-		return unitId;
+	public Unit getUnit() {
+		return unit;
 	}
 
-	public void setUnitId(Long unitId) {
-		this.unitId = unitId;
+	public void setUnit(Unit unit) {
+		this.unit = unit;
 	}
 
 	public float getAmount() {
