@@ -22,7 +22,7 @@ public class DeliveriesController {
 		return repository.findAll();
 	}
 	
-	@GetMapping
+	@GetMapping("/{id}")
 	public ResponseEntity<DeliveriesEntity> findById(@PathVariable Long id){
 		return repository.findById(id)
 				.map(ResponseEntity::ok)
