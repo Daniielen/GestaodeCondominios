@@ -18,11 +18,11 @@ import com.gestaodecondominios.Repositories.MaintenanceRepository;
 
 @RestController
 @RequestMapping("/maintenance")
-public class MaintenanceControllers {
+public class MaintenanceController {
 	
 	private final MaintenanceRepository repository;
 	
-	public MaintenanceControllers(MaintenanceRepository repository) {
+	public MaintenanceController(MaintenanceRepository repository) {
 		this.repository = repository;
 	}
 	
