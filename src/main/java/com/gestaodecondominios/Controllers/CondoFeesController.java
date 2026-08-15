@@ -23,7 +23,7 @@ public class CondoFeesController {
 		return repository.findAll();
 	}
 	
-	@GetMapping
+	@GetMapping("/{id}")
 	public ResponseEntity<CondoFeesEntity> findById(@PathVariable Long id){
 		return repository.findById(id)
 				.map(ResponseEntity::ok)
