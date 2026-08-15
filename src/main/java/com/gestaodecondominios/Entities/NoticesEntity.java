@@ -25,7 +25,7 @@ public class NoticesEntity {
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	private Long author_id;
+	private User author_id;
 
 
 	public Long getId() {
@@ -68,12 +68,12 @@ public class NoticesEntity {
 	}
 
 
-	public Long getAuthor_id() {
+	public User getAuthor_id() {
 		return author_id;
 	}
 
 
-	public void setAuthor_id(Long author_id) {
+	public void setAuthor_id(User author_id) {
 		this.author_id = author_id;
 	}
 
