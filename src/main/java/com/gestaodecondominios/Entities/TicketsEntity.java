@@ -6,6 +6,8 @@ import java.time.Instant;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.gestaodecondominios.Entities.Enums.TicketsStatusEnum;
+
 
 @Entity
 @Table(name = "tb_tickets")
@@ -26,8 +28,9 @@ public class TicketsEntity {
 	@JoinColumn(name = "user_id", nullable = false)
 	private User author;
 	
+	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
-	private String status;
+	private TicketsStatusEnum status;
 	
 	
 	@CreationTimestamp
@@ -66,11 +69,11 @@ public class TicketsEntity {
 		this.author = author;
 	}
 
-	public String getStatus() {
+	public TicketsStatusEnum getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(TicketsStatusEnum status) {
 		this.status = status;
 	}
 
