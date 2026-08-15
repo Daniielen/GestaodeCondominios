@@ -46,7 +46,7 @@ public class MaintenanceController {
 	@PutMapping("/{id}")
 	public ResponseEntity<MaintenanceEntity> update(
 			@PathVariable Long id,
-			@RequestBody MaintenanceEntity maintenanceEntity){
+			@RequestBody MaintenanceEntity maintenanceEntity) {
 			
 		return repository.findById(id)
 				.map(existing -> {
@@ -60,8 +60,8 @@ public class MaintenanceController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
-	@DeleteMapping("/{id")
-	public ResponseEntity<Void> delete(@PathVariable Long id){
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> delete(@PathVariable Long id) {
 		
 		if(!repository.existsById(id)) {
 			return ResponseEntity.notFound().build();
