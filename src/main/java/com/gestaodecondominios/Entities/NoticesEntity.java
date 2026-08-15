@@ -13,7 +13,7 @@ public class NoticesEntity {
 	private Long id;
 	
 	@Column(nullable = false)
-	private String description;
+	private String title;
 	
 	@Column(nullable = false, length = 500)
 	private String content;
@@ -25,7 +25,7 @@ public class NoticesEntity {
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	private Long user_id;
+	private Long author_id;
 
 
 	public Long getId() {
@@ -38,13 +38,13 @@ public class NoticesEntity {
 	}
 
 
-	public String getDescription() {
-		return description;
+	public String getTitle() {
+		return title;
 	}
 
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 
@@ -68,14 +68,16 @@ public class NoticesEntity {
 	}
 
 
-	public Long getUser_id() {
-		return user_id;
+	public Long getAuthor_id() {
+		return author_id;
 	}
 
 
-	public void setUser_id(Long user_id) {
-		this.user_id = user_id;
+	public void setAuthor_id(Long author_id) {
+		this.author_id = author_id;
 	}
+
+	
 	
 	
 }
