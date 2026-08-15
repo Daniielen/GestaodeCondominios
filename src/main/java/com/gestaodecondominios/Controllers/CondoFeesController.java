@@ -1,7 +1,6 @@
 package com.gestaodecondominios.Controllers;
 
 import com.gestaodecondominios.Entities.CondoFeesEntity;
-import com.gestaodecondominios.Entities.User;
 import com.gestaodecondominios.Repositories.CondoFeesRepository;
 
 import org.springframework.http.ResponseEntity;
