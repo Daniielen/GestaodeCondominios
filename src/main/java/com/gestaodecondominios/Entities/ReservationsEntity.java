@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import com.gestaodecondominios.Entities.Enums.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "tb_reservations")
 public class ReservationsEntity {
 	
 	@Id
