@@ -3,6 +3,8 @@ package com.gestaodecondominios.Entities;
 
 import java.time.LocalDate;
 
+import com.gestaodecondominios.Entities.Enums.CondoFeesEnum;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -23,8 +25,9 @@ public class CondoFeesEntity {
 	@Column(nullable = false)
 	private LocalDate dueDate;
 	
-	@Column(nullable = false, length = 20)
-	private String status;
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private CondoFeesEnum status;
 	
 	@Column(nullable = true)
 	private LocalDate paymentDate;
@@ -61,11 +64,11 @@ public class CondoFeesEntity {
 		this.dueDate = dueDate;
 	}
 
-	public String getStatus() {
+	public CondoFeesEnum getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(CondoFeesEnum status) {
 		this.status = status;
 	}
 
