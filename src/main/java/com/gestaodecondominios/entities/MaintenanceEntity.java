@@ -19,6 +19,7 @@ public class MaintenanceEntity {
 	private String description;
 	
 	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
 	private StatusMaintenanceEnum status;
 	
 	@Column(nullable = false)
